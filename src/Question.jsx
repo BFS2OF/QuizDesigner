@@ -12,9 +12,9 @@ function Question() {
 
     return (
         <div className="question">
-            <h2>frage</h2>
+            <h2>Frage</h2>
 
-            <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+            <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
             <select>
                 <option value={type}>SINGLE_CHOICE</option>
             </select>

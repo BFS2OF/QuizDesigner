@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import question from "./Question.jsx";
 import Question from "./Question.jsx";
+import Logo from "./assets/logo_bs2ab_farbe.png";
 
 function App() {
     const [title, setTitle] = useState("");
@@ -20,23 +21,42 @@ function App() {
 
   return (
     <>
-        <h2>Quiz Designer</h2>
+        <div className="title">
+            <div className="logo-container">
+                <img width="50" src={Logo} alt="Logo" />
+                <h2>Quiz creation</h2>
 
-        <p>Titel</p>
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Titel" />
-        <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Beschreibung" />
+            </div>
+            <h2 className="rechts"> MTLM Product</h2>
+        </div>
 
-        <button onClick={() => regenerate()}>Neu generieren</button>
+        <div className="content ">
 
-        <button onClick={() => setQuestions([...questions, {}])}>Frage erstellen</button>
 
-        {questions.map(question => {
-            return <Question></Question>;
-        })}
 
-        <p>^{code}</p>
+            <p>Titel</p>
+            <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Quiz Titel" />
+            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Beschreibung" />
 
-    </>
+            <button onClick={() => regenerate()}>Neu generieren</button>
+
+
+            <br/>
+            <button className="Frage" onClick={() => setQuestions([...questions, {}])}>Frage erstellen</button>
+
+
+            {questions.map(question => {
+                return <Question></Question>;
+            })}
+
+            <p>^{code}</p>
+
+        </div>
+
+        <div className="container" />
+
+
+        </>
   )
 }
 
