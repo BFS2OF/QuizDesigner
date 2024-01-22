@@ -14,7 +14,7 @@ function Question() {
         <div className="question">
             <h2>Frage</h2>
 
-            <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
+            <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="frage" />
             <select>
                 <option value={type}>SINGLE_CHOICE</option>
             </select>
@@ -22,7 +22,7 @@ function Question() {
                 return <input placeholder="Antwortmöglichkeit"/>
             })}
 
-            <input type="number" value= {correctAnswer} onChange={(e) => setCorrectAnswert(e.target.value)} />
+            <input type="number" value= {correctAnswer} onChange={(e) => setCorrectAnswert(e.target.value)} className={"zaehler"} />
 
         </div>
     );
