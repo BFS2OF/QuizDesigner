@@ -122,6 +122,7 @@ button {
 }
 
 input, textarea {
+    resize: none;
     margin: 0.2rem 0;
     padding: 0.7rem;
     box-sizing: border-box;
