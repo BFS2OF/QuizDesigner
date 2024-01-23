@@ -32,8 +32,6 @@ function App() {
 
         <div className="content ">
 
-
-
             <p>Quiz creation</p>
             <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Quiz Titel" />
             <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Beschreibung" />
