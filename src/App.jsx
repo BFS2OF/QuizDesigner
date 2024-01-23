@@ -111,7 +111,6 @@ function App() {
                 <div className="logo-container">
                     <img width="60px" src={Logo} alt="Logo"/>
                     <h2>Quiz Creator</h2>
-
                 </div>
                 <h2 className="rechts"> MTLM Product</h2>
             </div>
@@ -130,7 +129,7 @@ function App() {
                         </div>
 
                         <textarea value={description} onChange={(e) => setDescription(e.target.value)}
-                                  placeholder="Beschreibung"/>
+                                  placeholder="Beschreibung" />
 
 
                         <div className="input-container"><h2>Fragen</h2><hr/></div>
