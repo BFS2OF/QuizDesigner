@@ -216,12 +216,21 @@ input, textarea {
     gap: 1rem;
 }
 
+.btn-area-right {
+    display: flex;
+    gap: 1rem;
+}
+
 .question-header svg {
     font-size: 18pt;
     cursor: pointer;
 }
 
-.question-header svg:hover {
+.duplicate:hover {
+    color: #FF8A00;
+}
+
+.delete:hover {
     color: #c51c1c;
 }
 

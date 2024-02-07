@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faTrash} from "@fortawesome/free-solid-svg-icons";
+import {faCopy, faTrash} from "@fortawesome/free-solid-svg-icons";
 
 function Question({setQuestions, index, ...props}) {
 
@@ -24,13 +24,27 @@ function Question({setQuestions, index, ...props}) {
         setQuestions(questions => questions.filter((_, i) => i !== index));
     }
 
+    const duplicate = () => {
+        setQuestions(questions => {
+            const newQuestions = [...questions];
+            newQuestions.splice(index, 0, {title, type, answers, correctAnswer});
+            return newQuestions;
+        });
+    }
+
     return (
         <div className="question">
             <div className="question-header">
                 <h2>Frage</h2>
-                <div className="delete" onClick={deleteQuestion}>
-                    <FontAwesomeIcon icon={faTrash}/>
+                <div className="btn-area-right">
+                    <div className="duplicate" onClick={duplicate}>
+                        <FontAwesomeIcon icon={faCopy}/>
+                    </div>
+                    <div className="delete" onClick={deleteQuestion}>
+                        <FontAwesomeIcon icon={faTrash}/>
+                    </div>
                 </div>
+
             </div>
 
             <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="frage"
